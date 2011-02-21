@@ -45,13 +45,15 @@ def request_token(request, oauth_params):
     note
      * 동네API는 oauth_signature_method 로 HMAC-SHA1만을 지원한다.
      * 동네API는 oauth_version 1.0을 지원한다.
-     * callback을 처리할 수 없는 클라이언트는 oauth_callback 값으로 "oob"(out-of-band)를 설정하면 PIN(개인 인증 번호) flow을 따를 수 있다.
+     * callback을 처리할 수 없는 클라이언트는 oauth_callback 값으로 "oob"
+       (out-of-band)를 설정하면 PIN(개인 인증 번호) flow을 따를 수 있다.
     
     footnote
      .. [1] resource provider; 자원 제공자인 동네API를 의미
      .. [2] consumer; 동네API를 사용하는 것이 허가된 애플리케이션
-     .. [3] user; 동네 회원. 컨슈머에게 패스워드를 알려주지 않는 대신, access token을 발급해주어서 보호된 자원을 컨슈머가 사용하도록 허가 또는 불허할 수 있다.
-    
+     .. [3] user; 동네 회원. 컨슈머에게 패스워드를 알려주지 않는 대신, 
+            access token을 발급해주어서 보호된 자원을 컨슈머가 사용하도록 허가 
+            또는 불허할 수 있다.
     """
     #if request.method == "GET":
     #    raise AuthError("request method for 'request token' should be POST")
