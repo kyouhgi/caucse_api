@@ -210,6 +210,13 @@ class ArticlesTest(ApiTestCase):
         
     def test_hits_count(self):
         'GET articles/show/ hits increasement'
+        # ask who am I
+        resp, content = self.oauth_get(resource="users/show",
+                                       consumer=self.consumer,
+                                       token=self.access_token)
+        self.assertEqual(resp['status'], '200')
+        obj = json.loads(content)
+        user_id = obj['id']
         
         # before show article
         resp, content = self.oauth_get('articles/show/board_alumni99/100',
@@ -225,8 +232,11 @@ class ArticlesTest(ApiTestCase):
         obj = json.loads(content)
         after_show = obj['hits']
 
-        # differences must be 1        
-        self.assertEqual(before_show+1, after_show)
+        # differences must be 1 when I am not an author of the article       
+        if user_id == obj['author']['id']:
+            self.assertEqual(before_show, after_show)
+        else:
+            self.assertEqual(before_show+1, after_show)
         
         
 class BoardsTest(ApiTestCase):
