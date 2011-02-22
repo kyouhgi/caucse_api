@@ -107,14 +107,14 @@ class AbstractBoard(models.Model):
 
     def dec_comment_count(self):
         self.comment -= 1
-        self._fix_notice_deadline()
-    
-    def __unicode__(self):
-        return ",".join((str(self.id), self.title, self.name))
     
     def inc_hit_count(self):
         self.count += 1
+        self._fix_notice_deadline()
    
+    def __unicode__(self):
+        return ",".join((str(self.id), self.title, self.name))
+    
 class AbstractComment(models.Model):        
     id = models.AutoField(primary_key=True)
     idx = models.IntegerField()
