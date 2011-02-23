@@ -1013,7 +1013,7 @@ def cafes_list(request, oauth_params):
                             ]
                         }, 
                         
-                        ...
+                        ...       
                 
                         {
                             "cafe_name": "선배와의 대화",
@@ -1042,11 +1042,10 @@ def cafes_list(request, oauth_params):
             .. parsed-literal::
     
                 {
-                    "cafes": [
-                    ],
+                    "cafes": [], 
                     "listinfo": {
-                        "q": "",
-                        "total_cafes": 5,
+                        "q": "", 
+                        "total_cafes": 5, 
                         "total_matched_cafes": 0
                     }
                 }
