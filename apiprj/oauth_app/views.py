@@ -60,7 +60,6 @@ def request_token(request, oauth_params):
     
     try:
         consumer_key = oauth_params['oauth_consumer_key']
-        print consumer_key
         callback = oauth_params['oauth_callback']
     except KeyError:
         return HttpResponseBadRequest()
