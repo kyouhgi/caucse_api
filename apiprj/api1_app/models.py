@@ -400,6 +400,14 @@ class CommentAlumni10(AbstractComment):
     class Meta:
         db_table = u'comment_alumni10'
 
+# auto generated for board board_alumni11
+class BoardAlumni11(AbstractBoard):
+    class Meta:
+        db_table = u'board_alumni11'
+class CommentAlumni11(AbstractComment):
+    class Meta:
+        db_table = u'comment_alumni11'
+
 # auto generated for board board_alumni72
 class BoardAlumni72(AbstractBoard):
     class Meta:
